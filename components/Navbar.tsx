@@ -12,20 +12,27 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="flex justify-between items-center py-6 px-8 border-b border-brand-light bg-brand-gray/80 backdrop-blur sticky top-0 z-50 shadow-glow">
-      <Link href="/" className="text-xl font-display font-bold text-brand-accent hover:text-brand-accent-muted transition">
-        TOM ALLEN
-      </Link>
-      <div className="flex gap-6 text-brand-text">
-        {links.map(({ href, label }) => (
-          <Link
-            key={href}
-            href={href}
-            className={`hover:text-brand-accent transition ${pathname === href ? 'text-brand-accent' : ''}`}
-          >
-            {label}
-          </Link>
-        ))}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--brand-gray)]/80 backdrop-blur border-b border-[var(--brand-light)] shadow-[var(--glow)]">
+      <div className="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+        <Link
+          href="/"
+          className="text-xl font-display font-bold text-[var(--brand-accent)] hover:text-[var(--brand-accent-muted)] transition"
+        >
+          TOM ALLEN
+        </Link>
+        <div className="flex gap-6">
+          {links.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`text-[var(--brand-text)] hover:text-[var(--brand-accent)] transition ${
+                pathname === href ? 'text-[var(--brand-accent)]' : ''
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
       </div>
     </nav>
   );
