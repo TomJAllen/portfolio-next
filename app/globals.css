@@ -1,28 +1,87 @@
-@import "@tailwindcss/postcss";
+/* --- Tailwind core layers (v4 syntax) --- */
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
 
-/* Optional: your own CSS variables or overrides below */
-
-
+/* --- Brand theme variables --- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand palette */
+  --brand-dark: #0b0e13;
+  --brand-gray: #1a1f29;
+  --brand-light: #2a3140;
+  --brand-accent: #00f6ff;
+  --brand-accent-muted: #66fcf1;
+  --brand-text: #e5e7eb;
+
+  /* Gradients & effects */
+  --hero-gradient: linear-gradient(to bottom right, #0b0e13, #1a1f29, #2a3140);
+  --glow: 0 0 20px rgba(0, 246, 255, 0.4);
+
+  /* Typography */
+  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: Poppins, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  background: var(--hero-gradient);
+  color: var(--brand-text);
+  font-family: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* --- Global body defaults --- */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background: var(--hero-gradient);
+  color: var(--brand-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Headings & text hierarchy --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--brand-accent);
+}
+
+p {
+  color: var(--brand-text);
+}
+
+/* --- Buttons --- */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.25s ease;
+  box-shadow: var(--glow);
+}
+
+.button-primary {
+  background-color: var(--brand-accent);
+  color: #000;
+}
+
+.button-primary:hover {
+  background-color: var(--brand-accent-muted);
+}
+
+/* --- Cards / Containers --- */
+.card {
+  background-color: var(--brand-gray);
+  border: 1px solid var(--brand-light);
+  border-radius: 1rem;
+  box-shadow: var(--glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(0, 246, 255, 0.6);
 }
