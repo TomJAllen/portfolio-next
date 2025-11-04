@@ -1,15 +1,13 @@
-@import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@tailwindcss/postcss";
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+/* Optional: your own CSS variables or overrides below */
 
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
