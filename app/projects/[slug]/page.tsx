@@ -1,22 +1,29 @@
-import projects from '@/data/projects.json';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import projects from '@/data/projects.json';
+import type { Project } from '@/types/project';
 
 export default function ProjectDetail({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+  const project = (projects as Project[]).find(p => p.slug === params.slug);
   if (!project) return notFound();
 
   return (
-    <section className="max-w-4xl mx-auto">
-      <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
-      <p className="text-gray-400 mb-6">{project.role}</p>
-      <Image src={project.image} alt={project.title} width={900} height={500} className="rounded-xl mb-8" />
-      <p className="text-gray-300 leading-relaxed mb-6">{project.content}</p>
-      <ul className="flex flex-wrap gap-3">
-        {project.tags?.map((tag) => (
-          <li key={tag} className="bg-gray-700 px-3 py-1 rounded-full text-sm">{tag}</li>
-        ))}
-      </ul>
-    </section>
+    <main className="pt-28 px-8 md:px-20 max-w-4xl mx-auto">
+      <h1 className="text-5xl font-display font-bold text-[var(--brand-accent)]">{project.title}</h1>
+      <p className="text-[var(--brand-text)]/70 mt-2">{project.role}</p>
+      <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-[var(--brand-light)] shadow-[var(--glow)] my-8">
+        <Image src={project.image || '/images/placeholder.jpg'} alt={project.title} fill className="object-cover" />
+      </div>
+      <p className="text-[var(--brand-text)]/85 leading-7">{project.content}</p>
+      {project.tags?.length ? (
+        <ul className="flex flex-wrap gap-2 mt-6">
+          {project.tags.map(t => (
+            <li key={t} className="text-xs px-3 py-1 rounded-full border border-[var(--brand-light)] text-[var(--brand-text)]/75">
+              {t}
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </main>
   );
 }

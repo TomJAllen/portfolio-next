@@ -8,16 +8,13 @@ export default function Navbar() {
     { href: '/', label: 'Home' },
     { href: '/projects', label: 'Projects' },
     { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/contact', label: 'Contact' }
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-(--brand-gray)/80 backdrop-blur border-b border-(--brand-light) shadow-(--glow)">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--brand-gray)]/80 backdrop-blur border-b border-[var(--brand-light)] shadow-[var(--glow)]">
       <div className="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-        <Link
-          href="/"
-          className="text-xl font-display font-bold text-(--brand-accent) hover:text-(--brand-accent-muted) transition"
-        >
+        <Link href="/" className="text-xl font-display font-bold text-[var(--brand-accent)] hover:text-[var(--brand-accent-muted)] transition">
           TOM ALLEN
         </Link>
         <div className="flex gap-6">
@@ -25,8 +22,8 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className={`text-(--brand-text) hover:text-(--brand-accent) transition ${
-                pathname === href ? 'text-(--brand-accent)' : ''
+              className={`text-[var(--brand-text)] hover:text-[var(--brand-accent)] transition ${
+                pathname === href ? 'text-[var(--brand-accent)]' : ''
               }`}
             >
               {label}

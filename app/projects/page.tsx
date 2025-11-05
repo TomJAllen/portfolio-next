@@ -1,15 +1,13 @@
-import ProjectCard from '@/components/ProjectCard';
 import projects from '@/data/projects.json';
+import ProjectCard from '@/components/ProjectCard';
 
 export default function ProjectsPage() {
   return (
-    <section className="max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8 text-center">Projects</h1>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
+    <main className="pt-28 px-8 md:px-20 max-w-6xl mx-auto">
+      <h1 className="text-5xl font-display font-bold text-[var(--brand-accent)] mb-10">All Projects</h1>
+      <div className="grid md:grid-cols-2 gap-10">
+        {projects.map((p) => <ProjectCard key={p.slug} project={p as any} />)}
       </div>
-    </section>
+    </main>
   );
 }

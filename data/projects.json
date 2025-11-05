@@ -1,21 +1,29 @@
 [
-    {
-      "slug": "koko",
-      "title": "KOKO",
-      "role": "Head of Digital",
-      "summary": "Digital strategy and platform rebuild for London’s iconic venue.",
-      "content": "As Head of Digital, I oversaw multiple web products including ticketing, membership, and brand sites, integrating analytics and driving user experience innovation.",
-      "tags": ["Product Strategy", "Digital Transformation"],
-      "image": "/images/KOKO Portfolio Cover Image.jpg"
-    },
-    {
-      "slug": "sfyi",
-      "title": "Subscribed.FYI",
-      "role": "Co-Founder & Technical Lead",
-      "summary": "An early-stage SaaS product to track and manage subscriptions intelligently.",
-      "content": "Co-founded a SaaS startup that combined AI and UX simplicity to solve subscription overload. I built the MVP architecture, led technical design, and managed the dev roadmap.",
-      "tags": ["SaaS", "Startup", "AI"],
-      "image": "/images/SFYI Portfolio Cover Image.jpg"
-    }
-  ]
-  
+  {
+    "slug": "koko",
+    "title": "KOKO",
+    "role": "Head of Digital",
+    "summary": "Digital strategy and platform rebuild for London’s iconic venue.",
+    "image": "/images/KOKO Portfolio Cover Image.jpg",
+    "content": "As Head of Digital, I led multiple web products (ticketing, membership, brand) and a unified analytics stack.",
+    "tags": ["Product Strategy", "Digital Transformation"]
+  },
+  {
+    "slug": "sfyi",
+    "title": "Subscribed.FYI",
+    "role": "Co-Founder & Technical Lead",
+    "summary": "MVP SaaS to track and manage subscriptions using clean UX and automation.",
+    "image": "/images/SFYI Portfolio Cover Image.jpg",
+    "content": "Co-founded, led technical architecture and MVP build, and managed roadmap.",
+    "tags": ["SaaS", "Startup", "Automation"]
+  },
+  {
+    "slug": "decidros",
+    "title": "DecidrOS Totaliser",
+    "role": "Co-Founder / CTO-type",
+    "summary": "AI-driven knowledge & analytics platform for PLG.",
+    "image": "/images/9ine Portfolio Cover Image.jpg",
+    "content": "Built Rails-based SaaS with AI doc-QA, ClickUp integrations, and growth analytics.",
+    "tags": ["AI", "Rails", "Analytics"]
+  }
+]
