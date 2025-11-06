@@ -9,16 +9,16 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
 
   return (
     <main className="pt-28 px-8 md:px-20 max-w-4xl mx-auto">
-      <h1 className="text-5xl font-display font-bold text-[var(--brand-accent)]">{project.title}</h1>
-      <p className="text-[var(--brand-text)]/70 mt-2">{project.role}</p>
-      <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-[var(--brand-light)] shadow-[var(--glow)] my-8">
+      <h1 className="text-5xl font-display font-bold text-(--brand-accent)">{project.title}</h1>
+      <p className="text-(--brand-text)/70 mt-2">{project.role}</p>
+      <div className="relative w-full aspect-16/9 rounded-2xl overflow-hidden border border-(--brand-light) shadow-(--glow) my-8">
         <Image src={project.image || '/images/placeholder.jpg'} alt={project.title} fill className="object-cover" />
       </div>
-      <p className="text-[var(--brand-text)]/85 leading-7">{project.content}</p>
+      <p className="text-(--brand-text)/85 leading-7">{project.content}</p>
       {project.tags?.length ? (
         <ul className="flex flex-wrap gap-2 mt-6">
           {project.tags.map(t => (
-            <li key={t} className="text-xs px-3 py-1 rounded-full border border-[var(--brand-light)] text-[var(--brand-text)]/75">
+            <li key={t} className="text-xs px-3 py-1 rounded-full border border-(--brand-light) text-(--brand-text)/75">
               {t}
             </li>
           ))}
