@@ -1,29 +1,30 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import type { Project } from '@/types/project';
+import Image from "next/image";
+import Link from "next/link";
+import type { Project } from "@/types/project";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group block rounded-2xl overflow-hidden border border-(--brand-light) bg-(--brand-gray) hover:border-(--brand-accent) transition-all shadow-(--glow)"
+      className="group block overflow-hidden rounded-xl border border-gray-800 hover:border-cyan-400 transition-all"
     >
-      <div className="relative w-full aspect-4/3">
+      <div className="relative w-full aspect-[4/3] overflow-hidden">
         <Image
-          src={project.image || '/images/placeholder.jpg'}
+          src={project.image || "/images/placeholder.jpg"}
           alt={project.title}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover group-hover:opacity-90 transition-opacity"
+          className="object-cover object-center"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
         />
       </div>
-      <div className="p-5">
-        <h3 className="text-xl font-semibold text-(--brand-text) group-hover:text-(--brand-accent) transition">
+
+      <div className="bg-gray-900 p-5">
+        <h3 className="text-xl font-semibold text-white group-hover:text-cyan-400">
           {project.title}
         </h3>
-        <p className="text-sm text-(--brand-text)/70">{project.role}</p>
-        <p className="text-sm text-(--brand-text)/60 mt-1">{project.summary}</p>
+        <p className="text-sm text-gray-400">{project.role}</p>
+        <p className="text-sm text-gray-500 mt-1">{project.summary}</p>
       </div>
     </Link>
   );

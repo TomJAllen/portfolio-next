@@ -1,14 +1,14 @@
-import projects from '@/data/projects.json';
-import ProjectCard from '@/components/ProjectCard';
+import projects from "@/data/projects.json";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function ProjectGrid() {
   return (
-    <section className="">
-      <h2 className="text-4xl font-display font-bold text-(--brand-accent) mb-12 text-center">
-        Selected Projects
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {projects.map((p) => <ProjectCard key={p.slug} project={p as any} />)}
+    <section className="py-16 px-6 bg-black">
+      {/* 👇 this div wraps the ProjectCard components */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((p) => (
+          <ProjectCard key={p.slug} project={p as any} />
+        ))}
       </div>
     </section>
   );
