@@ -8,7 +8,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       href={`/projects/${project.slug}`}
       className="group block rounded-2xl overflow-hidden border border-(--brand-light) bg-(--brand-gray) hover:border-(--brand-accent) transition-all shadow-(--glow)"
     >
-      <div className="relative w-full aspect-16/9">
+      <div className="relative w-full aspect-4/3">
         <Image
           src={project.image || '/images/placeholder.jpg'}
           alt={project.title}

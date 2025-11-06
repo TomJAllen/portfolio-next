@@ -3,11 +3,11 @@ import ProjectCard from '@/components/ProjectCard';
 
 export default function ProjectGrid() {
   return (
-    <section className="py-24 px-8 md:px-20 bg-(--brand-gray)">
+    <section className="">
       <h2 className="text-4xl font-display font-bold text-(--brand-accent) mb-12 text-center">
         Selected Projects
       </h2>
-      <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {projects.map((p) => <ProjectCard key={p.slug} project={p as any} />)}
       </div>
     </section>
